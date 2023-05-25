@@ -22,3 +22,13 @@ print(my_list) # prints [1, 10, 3, 4, 5, 6]
 To remove an element from a list, you can use the remove() method:
 my_list.remove(3)
 print(my_list) # prints [1, 10, 4, 5, 6]
+
+
+
+
+	  n = int
+	  n1 = str(n)                                #converted into string
+        n2 = n1[::-1]					   #reversed string
+        number_list = list(str(n2))			   #converted into list
+        number_list.sort(reverse=True)             #sorted list of string
+        n3 = int(''.join(map(str, number_list)))   #converted into int 

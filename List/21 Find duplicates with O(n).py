@@ -36,3 +36,18 @@ class Solution:
             else:
                 result.append(n)
         return result
+
+#Using set
+
+class Solution:
+    def findDuplicates(self, nums):
+        s = set()
+        duplicates = []
+        
+        for num in nums:
+            if num in s:
+                duplicates.append(num)
+            else:
+                s.add(num)
+        
+        return duplicates

@@ -10,7 +10,7 @@ Example 2:
 Input: nums = [4,1,2,1,2]
 Output: 4
 '''
-
+# This solution exceeding time limit
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
         my_dict = {element: nums.count(element) for element in nums}
@@ -18,6 +18,22 @@ class Solution:
             if count == 1:
                 return element
     
+    
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        for i in nums:
+            if nums.count(i) == 1:
+                return i
+                
+#Optimized solution
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        result = 0
+        for num in nums:
+            result ^= num
+        return result
+        
 '''
 Given an integer array nums, in which exactly two elements appear only once and all the other elements appear exactly twice. 
 Find the two elements that appear only once. You can return the answer in any order.

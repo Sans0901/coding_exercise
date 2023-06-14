@@ -9,8 +9,31 @@ class Solution:
             nums[i] = output[i]
         
         return len(output)
+      
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        setnums = set(nums)
+        nums.clear()
+        nums.extend(sorted(setnums))
+        k = len(nums)
+        return k
 
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:      
+        n = len(nums)
+        if n <= 1:
+            return n
+        
+        j = 1  # index to track the unique elements
+        
+        for i in range(1, n):
+            if nums[i] != nums[i-1]:
+                nums[j] = nums[i]
+                j += 1
+        
+        return j
 
+#Here we are returning size of array after removing duplicates.
 
 '''
 

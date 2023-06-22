@@ -23,7 +23,7 @@ class Solution:
         
         # Binary search to find the leftmost index
         while left <= right:
-            mid = left + (right - left) // 2
+            mid = (left + right)// 2
             
             if nums[mid] < target:
                 left = mid + 1
@@ -38,7 +38,7 @@ class Solution:
         
         # Binary search to find the rightmost index
         while left <= right:
-            mid = left + (right - left) // 2
+            mid = (left + right) // 2
             
             if nums[mid] > target:
                 right = mid - 1
@@ -49,3 +49,6 @@ class Solution:
             output[1] = right
         
         return output
+
+        
+        

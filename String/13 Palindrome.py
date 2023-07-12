@@ -41,3 +41,29 @@ class Solution:
 2. Reverse the string, and compare it to the original string
 
 """
+
+'''
+FIND THE DIFFERENCE
+Example 1:
+
+Input: s = "abcd", t = "abcde"
+Output: "e"
+Explanation: 'e' is the letter that was added.
+Example 2:
+
+Input: s = "", t = "y"
+Output: "y"
+'''
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        s_count = Counter(s)
+                t_count = Counter(t)
+                
+                for char, count in t_count.items():
+                    if count > s_count[char]:
+                        return char
+                        
+                        
+        for i in t:
+            if t.count(i) != s.count(i) or i not in s:
+                return i

@@ -71,3 +71,25 @@ class Solution:
             return True
         else:
             return False
+            
+'''
+1822. Sign of the Product of an Array
+
+Input: nums = [-1,-2,-3,-4,3,2,1]
+Output: 1
+Explanation: The product of all values in the array is 144, and signFunc(144) = 1
+'''           
+class Solution:
+    def arraySign(self, nums: List[int]) -> int:
+        product = 1
+        for num in nums:
+            product = product * num
+        #return product
+        if product > 1:
+            return 1
+        elif product < 1 and product < 0:
+            return -1
+        else:
+            return 0
+            
+https://leetcode.com/problems/sort-even-and-odd-indices-independently/description/

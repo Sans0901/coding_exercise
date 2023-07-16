@@ -73,3 +73,89 @@ class Solution:
                 nums[i], nums[temp] = nums[temp], nums[i]
                 temp += 1
         return nums
+
+'''
+922. Sort Array By Parity II
+
+Input: nums = [4,2,5,7]
+Output: [4,5,2,7]
+Explanation: [4,7,2,5], [2,5,4,7], [2,7,4,5] would also have been accepted.
+'''
+
+class Solution:
+    def sortArrayByParityII(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        even_ele = []
+        odd_ele = []
+        for i in range(n):
+            if nums[i] % 2 == 0:
+                even_ele.append(nums[i])
+            else:
+                odd_ele.append(nums[i])
+        even_ele.sort(reverse=True)
+        odd_ele.sort(reverse=True)
+        #print(even_ele)
+        #print(odd_ele)
+        nums.clear()
+        for i in range(n):
+            if i%2==0:
+                nums.append(even_ele[i//2])
+            else:
+                nums.append(odd_ele[i//2])
+        return nums
+        
+class Solution:
+    def sortArrayByParityII(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        even_ele = []
+        odd_ele = []
+        for i in range(n):
+            if nums[i] % 2 == 0:
+                even_ele.append(nums[i])
+            else:
+                odd_ele.append(nums[i])
+        even_ele.sort(reverse=True)
+        odd_ele.sort(reverse=True)
+        #print(even_ele)
+        #print(odd_ele)
+        nums.clear()
+        for i in range(n):
+            if i%2==0:
+                nums.append(even_ele[i//2])
+            else:
+                nums.append(odd_ele[i//2])
+        return nums
+
+'''
+2149. Rearrange Array Elements by Sign
+
+Input: nums = [3,1,-2,-5,2,-4]
+Output: [3,-2,1,-5,2,-4]
+Explanation:
+The positive integers in nums are [3,1,2]. The negative integers are [-2,-5,-4].
+The only possible way to rearrange them such that they satisfy all conditions is [3,-2,1,-5,2,-4].
+Other ways such as [1,-2,2,-5,3,-4], [3,1,2,-2,-5,-4], [-2,3,-5,1,-4,2] are incorrect because they do not satisfy one or more conditions.  
+'''
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        pos = []
+        neg = []
+        for i in range(n):
+            if nums[i] > 0:
+                pos.append(nums[i])
+            else:
+                neg.append(nums[i])
+        '''
+        print(pos)
+        print(neg)
+        pos.sort(reverse=True)
+        neg.sort(reverse=True)
+        '''
+        nums.clear()
+        for i in range(n):
+            if i%2 == 0:
+                nums.append(pos[i//2])
+            else:
+                nums.append(neg[i//2])
+        return nums

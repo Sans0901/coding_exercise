@@ -19,8 +19,10 @@ Output: true
 class Solution:
     def validMountainArray(self, arr: List[int]) -> bool:
         n = len(arr)
+        print(n)
         mx = arr.index(max(arr))
-        if n > 3:
+        print(mx)
+        if n < 3:
             return False
         if mx == 0 or mx == n-1:
             return False
